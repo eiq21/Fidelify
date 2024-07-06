@@ -10,18 +10,22 @@ public sealed class Customer : Entity<Guid>
          string email,
          string phoneNumber) : base(customerId)
     {
-        FistName = firstName;
+        FirstName = firstName;
         LastName = lastName;
         Email = email;
         PhoneNumber = phoneNumber;
     }
-    public string FistName { get; private set; }
+    public string FirstName { get; private set; }
     public string LastName { get; private set; }
     public string Email { get; private set; }
     public string PhoneNumber { get; private set; }
     public int LoyaltyPoints { get; private set; }
 
-    public List<Transaction> Transactions { get; private set; } = new();
+    public List<Transaction> Transactions { get; private set; } = [];
+
+    private Customer()
+    {
+    }
 
     public static Customer Create(
         string firstName,

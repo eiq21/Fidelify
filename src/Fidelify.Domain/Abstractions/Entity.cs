@@ -1,11 +1,11 @@
 namespace Fidelify.Domain.Abstractions;
-public abstract class Entity<TEntityId>
+public abstract class Entity<Guid>
 {
     private readonly List<IDomainEvent> _domainEvents = new();
 
-    public TEntityId Id { get; init; }
+    public Guid Id { get; init; }
 
-    protected Entity(TEntityId id)
+    protected Entity(Guid id)
     {
         Id = id;
     }

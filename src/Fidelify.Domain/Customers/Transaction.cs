@@ -8,16 +8,16 @@ public sealed class Transaction : Entity<Guid>
         Guid transactionId,
         Guid customerId,
         Money amount,
-        DateTime dateOnUtc) : base(transactionId)
+        DateTime transactionDateOnUtc) : base(transactionId)
     {
         CustomerId = customerId;
         Amount = amount;
-        DateOnUtc = dateOnUtc;
+        TransactionDateOnUtc = transactionDateOnUtc;
     }
 
     public Guid CustomerId { get; private set; }
     public Money Amount { get; private set; }
-    public DateTime DateOnUtc { get; private set; }
+    public DateTime TransactionDateOnUtc { get; private set; }
 
     public static Transaction Create(
         Guid customerId,
@@ -30,4 +30,6 @@ public sealed class Transaction : Entity<Guid>
             amount,
             transactionDate);
     }
+
+    private Transaction() { }
 }

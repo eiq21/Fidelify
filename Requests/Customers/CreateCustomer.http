@@ -1,0 +1,12 @@
+@host = http://localhost:5040
+
+POST {{host}}/api/customers
+Accept: application/json
+Content-Type: application/json
+
+{
+    "FirstName": "John",
+    "LastName": "Doe",
+    "Email": "john@gmail.com",
+    "PhoneNumber": "1234567890"
+}

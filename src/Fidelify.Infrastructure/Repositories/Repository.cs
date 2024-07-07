@@ -12,7 +12,9 @@ where TEntity : Entity<Guid>
         _dbContext = dbContext;
     }
 
-    public async Task<TEntity?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+    public async Task<TEntity?> GetByIdAsync(
+        Guid id,
+        CancellationToken cancellationToken = default)
     {
         return await _dbContext
         .Set<TEntity>()

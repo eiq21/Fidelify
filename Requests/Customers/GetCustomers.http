@@ -1,6 +1,6 @@
 @host = http://localhost:5040
+@id = cd23402f-94d4-4300-b85d-5507cd9c500b
+GET {{host}}/api/customers/{{id}}
+Content-Type: application/json
 
-GET {{host}}/api/customers
-Accept: application/json
 
-###
